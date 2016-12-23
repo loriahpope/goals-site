@@ -1,116 +1,116 @@
-angular.module("contactsApp", ['ngRoute'])
+angular.module("goalsApp", ['ngRoute'])
     .config(function($routeProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "list.html",
-                controller: "ListController",
+                templateUrl: "goal-list.html",
+                controller: "GoalListController",
                 resolve: {
-                    contacts: function(Contacts) {
-                        return Contacts.getContacts();
+                    contacts: function(Goals) {
+                        return Goals.getGoals();
                     }
                 }
             })
-            .when("/new/contact", {
-                controller: "NewContactController",
-                templateUrl: "contact-form.html"
+            .when("/new/goal", {
+                controller: "NewGoalController",
+                templateUrl: "goal-form.html"
             })
-            .when("/contact/:contactId", {
-                controller: "EditContactController",
-                templateUrl: "contact.html"
+            .when("/goal/:goalId", {
+                controller: "EditGoalController",
+                templateUrl: "goal.html"
             })
             .otherwise({
                 redirectTo: "/"
             })
     })
-    .service("Contacts", function($http) {
-        this.getContacts = function() {
-            return $http.get("/contacts").
+    .service("Goals", function($http) {
+        this.getGoals = function() {
+            return $http.get("/goals").
                 then(function(response) {
                     return response;
                 }, function(response) {
-                    alert("Error finding contacts.");
+                    alert("Error finding goals.");
                 });
         }
-        this.createContact = function(contact) {
-            return $http.post("/contacts", contact).
+        this.createGoal = function(goal) {
+            return $http.post("/goals", goal).
                 then(function(response) {
                     return response;
                 }, function(response) {
-                    alert("Error creating contact.");
+                    alert("Error creating goal.");
                 });
         }
-        this.getContact = function(contactId) {
-            var url = "/contacts/" + contactId;
+        this.getGoal = function(goalId) {
+            var url = "/goals/" + goalId;
             return $http.get(url).
                 then(function(response) {
                     return response;
                 }, function(response) {
-                    alert("Error finding this contact.");
+                    alert("Error finding this goal.");
                 });
         }
-        this.editContact = function(contact) {
-            var url = "/contacts/" + contact._id;
-            console.log(contact._id);
-            return $http.put(url, contact).
+        this.editGoal = function(goal) {
+            var url = "/goals/" + goal._id;
+            console.log(goal._id);
+            return $http.put(url, goal).
                 then(function(response) {
                     return response;
                 }, function(response) {
-                    alert("Error editing this contact.");
+                    alert("Error editing this goal.");
                     console.log(response);
                 });
         }
-        this.deleteContact = function(contactId) {
-            var url = "/contacts/" + contactId;
+        this.deleteGoal = function(goalId) {
+            var url = "/goals/" + goalId;
             return $http.delete(url).
                 then(function(response) {
                     return response;
                 }, function(response) {
-                    alert("Error deleting this contact.");
+                    alert("Error deleting this goal.");
                     console.log(response);
                 });
         }
     })
-    .controller("ListController", function(contacts, $scope) {
-        $scope.contacts = contacts.data;
+    .controller("GoalListController", function(goals, $scope) {
+        $scope.goals = goals.data;
     })
-    .controller("NewContactController", function($scope, $location, Contacts) {
+    .controller("NewGoalController", function($scope, $location, Goals) {
         $scope.back = function() {
             $location.path("#/");
         }
 
-        $scope.saveContact = function(contact) {
-            Contacts.createContact(contact).then(function(doc) {
-                var contactUrl = "/contact/" + doc.data._id;
-                $location.path(contactUrl);
+        $scope.saveGoal = function(goal) {
+            Goals.createGoal(goal).then(function(doc) {
+                var goalUrl = "/goal/" + doc.data._id;
+                $location.path(goalUrl);
             }, function(response) {
                 alert(response);
             });
         }
     })
-    .controller("EditContactController", function($scope, $routeParams, Contacts) {
-        Contacts.getContact($routeParams.contactId).then(function(doc) {
-            $scope.contact = doc.data;
+    .controller("EditGoalController", function($scope, $routeParams, Goals) {
+        Goals.getGoal($routeParams.goalId).then(function(doc) {
+            $scope.goal = doc.data;
         }, function(response) {
             alert(response);
         });
 
         $scope.toggleEdit = function() {
             $scope.editMode = true;
-            $scope.contactFormUrl = "contact-form.html";
+            $scope.goalFormUrl = "goal-form.html";
         }
 
         $scope.back = function() {
             $scope.editMode = false;
-            $scope.contactFormUrl = "";
+            $scope.goalFormUrl = "";
         }
 
-        $scope.saveContact = function(contact) {
-            Contacts.editContact(contact);
+        $scope.saveGoal = function(goal) {
+            Goals.editContact(goal);
             $scope.editMode = false;
-            $scope.contactFormUrl = "";
+            $scope.goalFormUrl = "";
         }
 
-        $scope.deleteContact = function(contactId) {
-            Contacts.deleteContact(contactId);
+        $scope.deleteGoal = function(goalId) {
+            Goals.deleteGoal(goalId);
         }
     });
