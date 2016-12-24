@@ -26,20 +26,22 @@
   <div class="row">
     <div class="col-xs-12 col-md-4">
       <table class="table table-hover">
-    <tbody>
-      <tr>
-        <th>Goal Statement</th>
-        <th><a href="#/new/goal">Add a Goal</a></th>
-      </tr>
-      <tr ng-repeat="goal in goals | orderBy: 'goalCategory'" style="cursor:pointer" ng-href="#/goal/{{goal._id}}">
-        <td>
-          {{ goal.goalStatement }}
-        </td>
-        <td class="float-right">
-          <a ng-href="#/goal/{{goal._id}}">View</a>
-        </td>
-      </tr>
-    </tbody>
+        <col width="75%">
+        <col width="25%">
+        <tbody>
+          <tr>
+            <th>Goal Statement</th>
+            <th><a href="#/new/goal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
+          </tr>
+          <tr ng-repeat="goal in goals | orderBy: 'goalCategory'" style="cursor:pointer" ng-href="#/goal/{{goal._id}}">
+            <td>
+              {{ goal.goalStatement }}
+            </td>
+            <td class="float-right">
+              <a ng-href="#/goal/{{goal._id}}">View</a>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
