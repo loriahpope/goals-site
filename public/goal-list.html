@@ -17,7 +17,7 @@
     <tbody>
       <tr ng-repeat="goal in goals | orderBy:'lastName'" style="cursor:pointer">
         <td>
-          <a ng-href="#/goal/{{goal._id}}">{{ goal.firstName }} {{ goal.lastName }}</a>
+          <a ng-href="#/goal/{{goal._id}}">{{ goal.goalName }}</a>
         </td>
       </tr>
     </tbody>
