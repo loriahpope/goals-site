@@ -25,7 +25,7 @@
     </p>
     <div>
       <label>Measurable Steps (required)</label> 
-      <p ng-repeat="item in items" ng-model="goal.measurableSteps">
+      <p ng-repeat="item in items" ng-model="goal.measurableSteps.item">
         <input id="measurable-steps" class="form-control" type="text" ng-model="item" required> 
       </p>
          <button ng-click="addStep()">Add</button>
