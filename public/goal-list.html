@@ -48,22 +48,22 @@
       <table>
         <tbody>
           <tr>
-            <th>Measurable Goals</th>
+            <th colspan="3">Measurable Goals</th>
           </tr>
           <tr ng-if="goal.measurableStep1" ng-repeat="goal in goals">
             <td><input type="checkbox" aria-label="focus"></td>
             <td>{{goal.measurableStep1}}</td>
-            <td><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+            <td><a ng-href="#/goal/{{goal._id}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
           </tr>
           <tr ng-if="goal.measurableStep2" ng-repeat="goal in goals">
             <td><input type="checkbox" aria-label="focus"></td>
             <td>{{goal.measurableStep2}}</td>
-            <td><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+            <td><a ng-href="#/goal/{{goal._id}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
           </tr>
           <tr ng-if="goal.measurableStep3" ng-repeat="goal in goals">
             <td><input type="checkbox" aria-label="focus"></td>
             <td>{{goal.measurableStep3}}</td>
-            <td><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+            <td><a ng-href="#/goal/{{goal._id}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
           </tr>
         </tbody>
       </table>
