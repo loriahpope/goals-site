@@ -1,34 +1,34 @@
+<style>
+  .goal-btn {
+    -webkit-box-shadow: 2px 2px 1px 0px rgba(67,67,67,1);
+    -moz-box-shadow: 2px 2px 1px 0px rgba(67,67,67,1);
+    box-shadow: 2px 2px 1px 0px rgba(67,67,67,1);
+    background: #4f66ff;
+    border: #4f66ff;
+    color: #ffffff;
+    padding: 10px 20px;
+  }
+</style>
+
+
 <div class = "row">
-  <div class="col-md-6">
-    <h2>
-      Goals
-    </h2>
-  </div>
-  <div class="col-md-3">
-  </div>
-  <div class="col-md-2">
-    <a style="margin-top:20px" class="btn btn-default" href="#/new/goal">New</a>
-  </div>
-  <div class="col-md-1">
+  <div class="col-xs-12" style="padding: 30px 0;">
+    <a style="margin-top:20px" class="btn btn-default goal-btn pull-right" href="#/new/goal">Add a Goal</a>
   </div>
 </div>
 <div class="container">
-  <!-- <div ng-repeat="goal in goals | orderBy:'goalName'">
-
-  </div> -->
-
-
   <table class="table table-hover">
     <tbody>
+      <tr>
+        <th>Goal Statement</th>
+        <th></th>
+      </tr>
       <tr ng-repeat="goal in goals | orderBy: 'goalCategory'" style="cursor:pointer">
         <td>
-          <a ng-href="#/goal/{{goal._id}}">{{ goal.goalCategory }}</a>
+          {{ goal.goalStatement }}
         </td>
         <td>
-          <a ng-href="#/goal/{{goal._id}}">{{ goal.goalName }}</a>
-        </td>
-        <td>
-          <a ng-href="#/goal/{{goal._id}}">{{ goal.goalStatement }}</a>
+          <a style="margin-top:20px" class="btn btn-default goal-btn pull-right" ng-href="#/goal/{{goal._id}}">View</a>
         </td>
       </tr>
     </tbody>
