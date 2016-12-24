@@ -15,7 +15,7 @@
 <div class="container">
   <table class="table table-hover">
     <tbody>
-      <tr ng-repeat="goal in goals | orderBy:'lastName'" style="cursor:pointer">
+      <tr ng-repeat="goal in goals | orderBy:'goalName'" style="cursor:pointer">
         <td>
           <a ng-href="#/goal/{{goal._id}}">{{ goal.goalName }}</a>
         </td>
