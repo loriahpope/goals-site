@@ -12,9 +12,9 @@
 
 
 <div class = "row">
-  <div class="col-xs-12" style="padding: 30px 0;">
+  <!-- <div class="col-xs-12" style="padding: 30px 0;">
     <a style="margin-top:20px" class="btn btn-default goal-btn pull-right" href="#/new/goal">Add a Goal</a>
-  </div>
+  </div> -->
 </div>
 <div class="container">
   <div class="row">
@@ -23,14 +23,14 @@
     <tbody>
       <tr>
         <th>Goal Statement</th>
-        <th></th>
+        <th><a href="#/new/goal">Add a Goal</a></th>
       </tr>
       <tr ng-repeat="goal in goals | orderBy: 'goalCategory'" style="cursor:pointer" ng-href="#/goal/{{goal._id}}">
         <td>
           {{ goal.goalStatement }}
         </td>
         <td>
-          <a style="margin-top:20px" class="btn btn-default goal-btn pull-right" ng-href="#/goal/{{goal._id}}">View</a>
+          <a ng-href="#/goal/{{goal._id}}">View</a>
         </td>
       </tr>
     </tbody>
