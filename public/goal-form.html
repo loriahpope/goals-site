@@ -14,9 +14,26 @@
       <input id="name" class="form-control" type="date" ng-model="goal.goalDate" required> 
     </p>
     <p>
-      <label>Goal Statement (required)</label> 
-      <input id="name" class="form-control" type="text" ng-model="goal.goalStatement" required> 
+      <select ng-model="goal.goalCategory" required>
+        <option value="finances">Finances</option>
+        <option value="health">Health</option>
+        <option value="family">Family</option>
+        <option value="knowledge">Knowledge</option>
+        <option value="friendship">Friendship</option>
+      </select> 
     </p>
+    <div>
+      <p>
+        <label>Measurable Steps (required)</label> 
+        <input id="name" class="form-control" type="text" ng-model="goal.measurableSteps" required> 
+      </p>
+    </div>
+    <div>
+      <p>
+        <label>Goal Statement (required)</label> 
+        <input id="name" class="form-control" type="text" ng-model="goal.goalStatement" required> 
+      </p>
+    </div>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="saveGoal(goal)">Save</button>
       <button style="margin-top:20px" class="btn btn-default" ng-click="back()">Back</button>

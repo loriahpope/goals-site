@@ -16,6 +16,8 @@
   <div>
     <p ng-if="goal.goalName">goal name: {{ goal.goalName }}</p>
     <p ng-if="goal.goalDate">goal date: {{ goal.goalDate }} </p>
+    <p ng-if="goal.goalCategory">goal category: {{ goal.goalCategory }} </p>
+    <p ng-if="goal.measurableStep">measurableStep: {{ goal.measurableStep }} </p>
     <p ng-if="goal.goalStatement">goal statement: {{ goal.goalStatement }} </p>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="toggleEdit()">Edit</button>
