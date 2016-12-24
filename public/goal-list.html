@@ -1,4 +1,10 @@
 <style>
+  td {
+    width: 75%;
+  }
+  .float-right {
+    float: right;
+  }
   .goal-btn {
     -webkit-box-shadow: 2px 2px 1px 0px rgba(67,67,67,1);
     -moz-box-shadow: 2px 2px 1px 0px rgba(67,67,67,1);
@@ -29,7 +35,7 @@
         <td>
           {{ goal.goalStatement }}
         </td>
-        <td>
+        <td class="float-right">
           <a ng-href="#/goal/{{goal._id}}">View</a>
         </td>
       </tr>
