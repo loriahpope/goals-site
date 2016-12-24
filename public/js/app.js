@@ -105,7 +105,7 @@ angular.module("goalsApp", ['ngRoute'])
         }
 
         $scope.saveGoal = function(goal) {
-            Goals.editContact(goal);
+            Goals.editGoal(goal);
             $scope.editMode = false;
             $scope.goalFormUrl = "";
         }
