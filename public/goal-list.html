@@ -49,13 +49,14 @@
         <tbody>
           <tr>
           </tr>
-          <tr ng-repeat="goal in goals">
-            <td ng-if="goal.measurableStep1">{{goal.measurableStep1}}
-            </td>
-            <td ng-if="goal.measurableStep2">{{goal.measurableStep2}}
-            </td>
-            <td ng-if="goal.measurableStep3">{{goal.measurableStep3}}
-            </td>
+          <tr ng-if="goal.measurableStep1" ng-repeat="goal in goals">
+            <td>{{goal.measurableStep1}}</td>
+          </tr>
+          <tr ng-if="goal.measurableStep2" ng-repeat="goal in goals">
+            <td>{{goal.measurableStep2}}</td>
+          </tr>
+          <tr ng-if="goal.measurableStep3" ng-repeat="goal in goals">
+            <td>{{goal.measurableStep3}}</td>
           </tr>
         </tbody>
       </table>
