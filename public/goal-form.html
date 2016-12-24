@@ -23,9 +23,9 @@
         <option value="friendship">Friendship</option>
       </select> 
     </p>
-    <div ng-repeat="choice in choices">
-      <p>
-        <label>Measurable Steps (required)</label> 
+    <div>
+      <label>Measurable Steps (required)</label> 
+      <p ng-repeat="choice in choices">
         <input id="name" class="form-control" type="text" ng-model="'goal.measurableSteps' + choice.id" required> 
       </p>
          <button ng-click="addStep()">Add</button>
