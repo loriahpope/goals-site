@@ -25,8 +25,8 @@
     </p>
     <div>
       <label>Measurable Steps (required)</label> 
-      <p ng-repeat="choice in choices">
-        <input id="name" class="form-control" type="text" ng-model="'goal.measurableSteps' + choice.id" required> 
+      <p ng-repeat="item in items" ng-model="goal.measurableSteps">
+        <input id="measurable-steps" class="form-control" type="text" ng-model="item.text" required> 
       </p>
          <button ng-click="addStep()">Add</button>
     </div>

@@ -87,12 +87,12 @@ angular.module("goalsApp", ['ngRoute'])
             });
         }
 
-        $scope.choices = [{id: 'test'}, {id: 'test2'}];
+        $scope.items = [];
 
         $scope.addStep = function() {
-            var newItemNo = $scope.choices.length + 1;
-
-            $scope.choices.push({'id':'choice'+newItemNo})
+            $scope.items.push({
+                text: ""
+            })
         }
     })
     .controller("EditGoalController", function($scope, $routeParams, Goals) {
