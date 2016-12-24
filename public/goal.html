@@ -15,7 +15,7 @@
 <div ng-hide="editMode" class="container">
   <div>
     <p ng-if="goal.goalName">goal name: {{ goal.goalName }}</p>
-    <p ng-if="goal.goalDate">goal date: {{ goal.goalDate }} </p>
+    <p ng-if="goal.goalDate">goal date: {{ goal.goalDate | date:"MM/dd/yyyy }} </p>
     <p ng-if="goal.goalCategory">goal category: {{ goal.goalCategory }} </p>
     <p ng-if="goal.measurableStep1">measurable step 1: {{ goal.measurableStep1 }} </p>
     <p ng-if="goal.measurableStep2">measurable step 2: {{ goal.measurableStep2 }} </p>
