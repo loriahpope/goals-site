@@ -91,7 +91,6 @@ angular.module("goalsApp", ['ngRoute'])
 
         $scope.addStep = function() {
             $scope.items.push({
-                text: ""
             })
         }
     })
