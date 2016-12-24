@@ -15,14 +15,13 @@
   .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border: none;
   }
+
+  .table-hover>tbody>tr:hover {
+    background-color: transparent;
+  }
+
 </style>
 
-
-<div class = "row">
-  <!-- <div class="col-xs-12" style="padding: 30px 0;">
-    <a style="margin-top:20px" class="btn btn-default goal-btn pull-right" href="#/new/goal">Add a Goal</a>
-  </div> -->
-</div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-4">
@@ -46,11 +45,25 @@
       </table>
     </div>
     <div class="col-xs-12 col-md-8">
-      <div ng-repeat="goal in goals">
+      <table>
+        <tbody>
+          <tr>
+          </tr>
+          <tr ng-repeat="goal in goals">
+            <td ng-if="goal.measurableStep1">{{goal.measurableStep1}}
+            </td>
+            <td ng-if="goal.measurableStep2">{{goal.measurableStep2}}
+            </td>
+            <td ng-if="goal.measurableStep3">{{goal.measurableStep3}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+<!--       <div ng-repeat="goal in goals">
         <p ng-if="goal.measurableStep1">{{goal.measurableStep1}}</p>
         <p ng-if="goal.measurableStep2">{{goal.measurableStep2}}</p>
         <p ng-if="goal.measurableStep3">{{goal.measurableStep3}}</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
