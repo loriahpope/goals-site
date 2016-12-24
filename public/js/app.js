@@ -5,7 +5,7 @@ angular.module("goalsApp", ['ngRoute'])
                 templateUrl: "goal-list.html",
                 controller: "GoalListController",
                 resolve: {
-                    contacts: function(Goals) {
+                    goals: function(Goals) {
                         return Goals.getGoals();
                     }
                 }
