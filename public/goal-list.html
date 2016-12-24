@@ -13,11 +13,22 @@
   </div>
 </div>
 <div class="container">
+  <!-- <div ng-repeat="goal in goals | orderBy:'goalName'">
+
+  </div> -->
+
+
   <table class="table table-hover">
     <tbody>
-      <tr ng-repeat="goal in goals | orderBy:'goalName'" style="cursor:pointer">
+      <tr ng-repeat="goal in goals | groupBy:'goalCategory' orderBy:'goalName'" style="cursor:pointer">
+        <td>
+          <a ng-href="#/goal/{{goal._id}}">{{ goal.goalCategory }}</a>
+        </td>
         <td>
           <a ng-href="#/goal/{{goal._id}}">{{ goal.goalName }}</a>
+        </td>
+        <td>
+          <a ng-href="#/goal/{{goal._id}}">{{ goal.goalStatement }}</a>
         </td>
       </tr>
     </tbody>
