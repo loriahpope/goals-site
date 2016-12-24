@@ -25,17 +25,20 @@
     </p>
     <div>
       <label>Measurable Steps (required)</label> 
-      <p ng-repeat="item in items" ng-model="goal.measurableSteps.item">
-        <input id="measurable-steps" class="form-control" type="text" ng-model="item" required> 
+      <p>
+        <input id="measurable-steps1" class="form-control" type="text" ng-model="goals.measurableSteps1" required>
       </p>
-         <button ng-click="addStep()">Add</button>
+      <p>
+        <input id="measurable-steps2" class="form-control" type="text" ng-model="goals.measurableSteps2" required>
+      </p>
+      <p>
+        <input id="measurable-steps3" class="form-control" type="text" ng-model="goals.measurableSteps3" required>
+      </p>
     </div>
-    <div>
       <p>
         <label>Goal Statement (required)</label> 
         <input id="name" class="form-control" type="text" ng-model="goal.goalStatement" required> 
       </p>
-    </div>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="saveGoal(goal)">Save</button>
       <button style="margin-top:20px" class="btn btn-default" ng-click="back()">Back</button>
