@@ -17,13 +17,15 @@
   </div>
 </div>
 <div class="container">
-  <table class="table table-hover">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <table class="table table-hover">
     <tbody>
       <tr>
         <th>Goal Statement</th>
         <th></th>
       </tr>
-      <tr ng-repeat="goal in goals | orderBy: 'goalCategory'" style="cursor:pointer">
+      <tr ng-repeat="goal in goals | orderBy: 'goalCategory'" style="cursor:pointer" ng-href="#/goal/{{goal._id}}">
         <td>
           {{ goal.goalStatement }}
         </td>
@@ -32,5 +34,7 @@
         </td>
       </tr>
     </tbody>
-  </table>
+      </table>
+    </div>
+  </div>
 </div>
