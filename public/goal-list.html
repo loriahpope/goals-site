@@ -45,5 +45,12 @@
         </tbody>
       </table>
     </div>
+    <div class="col-xs-12 col-md-8">
+      <div ng-repeat="goal in goals">
+        <p ng-if="goal.measurableStep1">{{goal.measurableStep1}}</p>
+        <p ng-if="goal.measurableStep2">{{goal.measurableStep2}}</p>
+        <p ng-if="goal.measurableStep3">{{goal.measurableStep3}}</p>
+      </div>
+    </div>
   </div>
 </div>
