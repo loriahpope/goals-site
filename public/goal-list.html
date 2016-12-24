@@ -20,7 +20,7 @@
 
   <table class="table table-hover">
     <tbody>
-      <tr ng-repeat="goal in goals | groupBy:'goalCategory' | orderBy:'goalName'" style="cursor:pointer">
+      <tr ng-repeat="goal in goals | groupBy:'goalCategory'" style="cursor:pointer">
         <td>
           <a ng-href="#/goal/{{goal._id}}">{{ goal.goalCategory }}</a>
         </td>
